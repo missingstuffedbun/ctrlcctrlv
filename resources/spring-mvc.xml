@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+       ">
+
+    <!-- 注解扫描的包 -->
+    <context:component-scan base-package="com.zhizoo"/>
+    <!-- 开启注解方案2 -->
+    <mvc:annotation-driven/>
+    <!-- 基于注释的事务，当注释中发现@Transactional时，使用id为“transactionManager”的事务管理器 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--配置静态文件访问-->
+    <mvc:resources mapping="/html/**" location="html/" />
+    <mvc:resources mapping="/images/**" location="images/" />
+    
+    <!-- 视图解释类 -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--&lt;!&ndash;拦截器配置&ndash;&gt;-->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash;过滤的路径 &ndash;&gt;-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--&lt;!&ndash;&lt;!&ndash;去掉不需要进行过滤的路径：微信&ndash;&gt;&ndash;&gt;-->
+            <!--<mvc:exclude-mapping path="/wechat/**"/>-->
+            <!--<mvc:exclude-mapping path="/token"/>-->
+            <!--<mvc:exclude-mapping path="/info"/>-->
+            <!--&lt;!&ndash;去掉不需要进行过滤的路径：首页&ndash;&gt;-->
+            <!--<mvc:exclude-mapping path="/index"/>-->
+            <!--<bean class="com.zhizoo.interceptor.SecurityInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+
+</beans>
