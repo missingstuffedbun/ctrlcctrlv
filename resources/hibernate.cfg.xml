@@ -7,15 +7,8 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.cache.use_second_level_cache">false</property>
 
-        <property name="connection.url">jdbc:mysql://42.96.150.245:3306/deating</property>
+        <property name="connection.url"></property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <mapping class="com.zhizoo.model.Dish"/>
-        <mapping class="com.zhizoo.model.Order"/>
-        <mapping class="com.zhizoo.model.OrderLog"/>
-        <mapping class="com.zhizoo.model.Restaurant"/>
-        <mapping class="com.zhizoo.model.TableLog"/>
-        <mapping class="com.zhizoo.model.User"/>
-        <mapping class="com.zhizoo.model.UserRelation"/>
-        <mapping class="com.zhizoo.model.UserTable"/>
+
     </session-factory>
 </hibernate-configuration>

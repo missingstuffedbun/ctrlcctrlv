@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -15,7 +15,7 @@
        ">
 
     <!-- 注解扫描的包 -->
-    <context:component-scan base-package="com.zhizoo"/>
+    <context:component-scan base-package=""/>
     <!-- 开启注解方案2 -->
     <mvc:annotation-driven/>
     <!-- 基于注释的事务，当注释中发现@Transactional时，使用id为“transactionManager”的事务管理器 -->
