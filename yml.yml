@@ -1,20 +1,20 @@
 jobs:
 - sparkJob:
    jarFileUris:
-   - gs://fcr-prediction-resources/dataproc-test-dash-test/dataprocJavaDemo-1.0-SNAPSHOT.jar
+   - gs://weiwei-test/dataprocJavaDemo-1.0-SNAPSHOT.jar
    mainClass: org.example.dataproc.InternationalLoansAppDataprocSmall
  stepId: ibrd-small-spark
 - sparkJob:
    jarFileUris:
-   - gs://fcr-prediction-resources/dataproc-test-dash-test/dataprocJavaDemo-1.0-SNAPSHOT.jar
+   - gs://weiwei-test/dataprocJavaDemo-1.0-SNAPSHOT.jar
    mainClass: org.example.dataproc.InternationalLoansAppDataprocLarge
  stepId: ibrd-large-spark
 - pysparkJob:
    args:
-   - gs://fcr-prediction-resources/dataproc-test-dash-test/
+   - gs://weiwei-test/
    - ibrd-statement-of-loans-historical-data.csv
    - ibrd-summary-large-python
-   mainPythonFileUri: gs://fcr-prediction-resources/dataproc-test-dash-test/international_loans_dataproc.py
+   mainPythonFileUri: gs://weiwei-test/international_loans_dataproc.py
  stepId: ibrd-large-pyspark
 placement:
  managedCluster:
