@@ -1,0 +1,6 @@
+https://github.com/garystafford/dataproc-java-demo
+gsutil cp data/ibrd-statement-of-loans-*.csv $BUCKET_NAME
+gsutil cp build/libs/dataprocJavaDemo-1.0-SNAPSHOT.jar $BUCKET_NAME
+
+https://github.com/garystafford/dataproc-python-demo/blob/master/international_loans_dataproc.py
+gsutil cp international_loans_dataproc.py $BUCKET_NAME 
